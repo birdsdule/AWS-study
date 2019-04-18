@@ -15,7 +15,7 @@ def lambda_handler(event, context):
         json_object = s3_client.get_object(Bucket=bucket, Key=json_file_name)  # get json object
         jsonFileReader = json_object['Body'].read()  # read json file context
         table = dynamodb.Table('Movies')
-        movies = json.loads(jsonFileReader.decode('utf-8'), parse_float=decimal.Decimal)#decide json and use decimal to modify float
+        movies = json.loads(jsonFileReader.decode('utf-8'), parse_float=decimal.Decimal)#decode json and use decimal to modify float
         for movie in movies:
             table.put_item(Item=movie)
             print("movie added", movie)
