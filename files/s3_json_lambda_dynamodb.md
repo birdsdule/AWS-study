@@ -6,6 +6,9 @@ how to use lambda get .json files from s3 and input the data to the dynamoDB
   * create `policy`
   * choose `CloudWatch` service. Because this is a demo, we grant all resource and actions to it
   <img src="https://github.com/birdsdule/AWS-study/blob/master/pics/image1.png" width=275><br>
+    * when you use the cloudwatch to debug, if there is no corresponding log, add `logs` to policy
+    <img src="https://github.com/birdsdule/AWS-study/blob/master/pics/image5.png" width=275><br>
+  
   * add `S3` service and `dynamoDB` in same way
   * here we name the policy as "s3_json_dynamoDB"
   * create a role, choose `lambda`->next->select the policy we just build->name it
